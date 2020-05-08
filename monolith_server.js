@@ -46,7 +46,7 @@ const getTokens = query => {
   try {
     const auth = Buffer.from(`${config.clientId}:${OAuth.openSecret(config.secret)}`).toString('base64');
     response = HTTP.post(
-      "https://api.monolith.com/oauth2/token", {
+      "http://localhost:3000/oauth/token", {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
           Authorization: `Basic ${auth}`,
